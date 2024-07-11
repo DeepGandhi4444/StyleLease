@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Brnd-logo Website Template | Home :: w3layouts</title>
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js/jquery.min.js"></script>
+		 <!-- Custom Theme files -->
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+		<!-- Custom Theme files -->
+   		 <!---- start-smoth-scrolling---->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+		 <!---- start-smoth-scrolling---->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+		<!----webfonts--->
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+		<!---//webfonts--->
+		<!----start-top-nav-script---->
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+		<!----//End-top-nav-script---->
+	</head>
+	<body>
+		<!----container---->
+		<div class="container-fluid">
+			<!----top-header---->
+			<div class="top-header">
+				<div class="logo">
+					<a href="index.html"><img src="images/StyleLease.png" title="barndlogo" /></a>
+				</div>
+			</div>
+
+
+			<div class="container-fluid" style="padding-top: 50px;">
+				<div class="row">
+					<div class="col-sm-6 text-center">
+						<img src="images/img_avatar.png" class="profilelogo" alt="Avatar" style="width:100px">
+					</div>
+					<div class="col-sm-6 text-center">
+						<h2>Deep Gandhi</h2>
+						<p>8866442233</p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<ul class="container-fluid">
+					<li class="container-fluid" style="list-style: none; padding-top: 10px;">
+					<a href="products.html" style="padding-left: 0px; text-align: center; color: coral; padding-left: 32px;"><i class="fa-solid fa-box"><p style="padding-top: 10px;">Orders</p></i></a>
+					<a href="products.html" style="padding-left: 0px; text-align: center; color: coral; padding-left: 50px;"><i class="fa-solid fa-heart"><p style="padding-top: 10px;">Wishlist</p></i></a>
+					</li>
+					<li class="container-fluid" style="list-style: none; padding-top: 10px;">
+					<a href="products.html" style="padding-left: 0px; text-align: center; color: coral; padding-left: 23px;"><i class="fa-solid fa-gift"><p style="padding-top: 10px;">Coupons</p></i></a>
+					<a href="products.html" style="padding-left: 0px; text-align: center; color: coral; padding-left: 32px;"><i class="fa-solid fa-headphones"><p style="padding-top: 10px;">Help Center</p></i></a>
+				  	</li>
+				</ul>
+			</div>
+
+
+			<section id="aa-support">
+				<div class="container">
+				  <div class="row">
+					<div class="col-md-12">
+					  <div class="aa-support-area">
+						<!-- single support -->
+						<div class="col-md-4 col-sm-4 col-xs-12">
+						  <div class="aa-support-single">
+							<i class="fa-solid fa-truck-fast" style="color: coral;"></i>
+							<h4>FREE SHIPPING</h4>
+							<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+						  </div>
+						</div>
+						<!-- single support -->
+						<div class="col-md-4 col-sm-4 col-xs-12" style="padding-top: 30px;">
+						  <div class="aa-support-single">
+							<i class="fa-solid fa-clock" style="color: coral;"></i>
+							<h4>30 DAYS MONEY BACK</h4>
+							<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+						  </div>
+						</div>
+						<!-- single support -->
+						<div class="col-md-4 col-sm-4 col-xs-12" style="padding-top: 30px;">
+						  <div class="aa-support-single">
+							<i class="fa-solid fa-phone" style="color: coral;"></i>
+							<h4>SUPPORT 24/7</h4>
+							<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </section>
+
+
+            
+			<!----footer--->
+			<div class="navbar shade navbar-fixed-bottom" role="navigation">
+				<div class="container-fluid">
+					<ul class="container-fluid">
+						<li class="container-fluid" style="list-style: none; padding-top: 10px;">
+						<a href="products.html" style="padding-left: 0px;"><img src="images/categories.png"></a>
+						<a href="index.html" style="padding-left: 22px;"><img src="images/home1.png"></a>
+						<a href="cart.html" style="padding-left: 18px;"><img src="images/cart1.png"></a>
+						<a href="#" style="padding-left: 20px;"><img src="images/account.png"></a>
+					  </li>
+					</ul>
+				</div>
+			  </div>
+			<!---//footer--->
+			<!---to-top--->
+						
+			<script type="text/javascript">
+					$(document).ready(function() {
+						/*
+						var defaults = {
+							containerID: 'toTop', // fading element id
+							containerHoverID: 'toTopHover', // fading element hover id
+							scrollSpeed: 1200,
+							easingType: 'linear' 
+						};
+						*/
+						
+						$().UItoTop({ easingType: 'easeOutQuart' });
+						
+					});
+				</script>
+								
+					
+			<!--//to-top--->
+		</div>
+		<!----container---->
+		
+	</body>
+</html>
+
