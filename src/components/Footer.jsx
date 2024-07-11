@@ -17,7 +17,7 @@ const Footer = () => {
               <Link to="/" style={{ paddingLeft: 22 }}>
                 <img src="images/home1.png" />
               </Link>
-              <Link to="/cart" style={{ paddingLeft: 18 }}>
+              <Link to="/cart" style={{ paddingLeft: 18 }}> 
                 <img src="images/cart1.png" />
               </Link>
               <Link to="/profile" style={{ paddingLeft: 20 }}>
