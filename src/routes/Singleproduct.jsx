@@ -4,12 +4,23 @@ import { Rating } from "primereact/rating";
 import { Panel } from "primereact/panel";
 import { Link } from "react-router-dom";
 import { HitItems } from "../data/Products";
+import {Toast} from "primereact/toast"
 const Singleproduct = ({ cartItems, setCartItems }) => {
   const [value, setValue] = useState(null);
   const ref = useRef(null);
   const addToCart = (product) => {
     setCartItems([...cartItems, product]);
   };
+  const toast = useRef(null);
+  const show = () => {
+    toast.current.show({ severity: 'success', summary: 'added to cart', detail: 'Item added to the cart succesfully' });
+    // toast.current.show({severity:'success', summary: 'Success', detail:'Message Content', life: 3000});
+
+};
+function dualfunc(){
+  addToCart(HitItems[0]);
+  show()
+}
   return (
     <>
       <div className="content">
@@ -86,7 +97,8 @@ const Singleproduct = ({ cartItems, setCartItems }) => {
                   <div className="clearfix"> </div>
                   <div className="product-cart-share">
                     <div className="add-cart-btn">
-                      <input type="button" defaultValue="Add to cart" onClick={() => addToCart(HitItems[0])} />
+                    <Toast ref={toast} className="custom-toast-success " />
+                      <input type="button" defaultValue="Add to cart" onClick={() => dualfunc()} />
                     </div>
                     <ul className="product-share text-right">
                       <h3>Share This:</h3>
