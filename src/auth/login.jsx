@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { Ripple } from 'primereact/ripple';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,15 +18,15 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const user = users.find(user => user.email === email);
 
-    // Basic validation
-    if (!email || !password) {
-      setError('Email and Password are required.');
-      return;
+    if (user && user.password === password) {
+      navigate('/home');
+    } else {
+      setError('Invalid email or password.');
     }
-  else{
-    navigate('/home');
-  }}
+    
+}
   return (
     <>
       <section>
@@ -62,8 +62,9 @@ export default function Login() {
                   Remember Me
                 </label>
               </div>
-              <div className="input1">
+              <div className="input1 p-ripple">
                 <input type="submit" value="Login" />
+                <Ripple/>
               </div>
               <div className="input1">
                 <p>

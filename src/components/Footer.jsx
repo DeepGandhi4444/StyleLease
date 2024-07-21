@@ -1,27 +1,34 @@
 import React,{useRef} from "react";
 import { Link } from "react-router-dom";
+import { Ripple } from "primereact/ripple";
 const Footer = () => {
 
   return (
     <>
       {/*--footer-*/}
-      <div className="navbar shade navbar-fixed-bottom" role="navigation">
+      <div className="navbar shade navbar-fixed-bottom p-ripple" role="navigation">
+      {/* <Ripple/> */}
         <div className="container-fluid">
           <ul className="container-fluid">
             <li
-              className="container-fluid"
+              className="container-fluid p-ripple"
               style={{ listStyle: "none", paddingTop: 10 }}
             >
-              <Link to="/products" style={{ paddingLeft: 0 }}>
+              <Link to="/products" className="p-ripple" style={{ paddingLeft: 0 }}>
+              <Ripple/>
                 <img src="images/categories.png" />
+                
               </Link>
-              <Link to="/" style={{ paddingLeft: 22 }}>
+              <Link to="/home" className="p-ripple" style={{ paddingLeft: 22 }}>
+              <Ripple/>
                 <img src="images/home1.png" />
               </Link>
-              <Link to="/cart" style={{ paddingLeft: 18 }}> 
+              <Link to="/cart" className="p-ripple" style={{ paddingLeft: 18 }}> 
+              <Ripple/>
                 <img src="images/cart1.png" />
               </Link>
-              <Link to="/profile" style={{ paddingLeft: 20 }}>
+              <Link to="/profile" className="p-ripple" style={{ paddingLeft: 20 }}>
+              <Ripple/>
                 <img src="images/account.png" />
               </Link>
             </li>

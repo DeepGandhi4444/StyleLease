@@ -15,12 +15,18 @@ import Profile from "./routes/Profile";
 import Cart from "./routes/Cart";
 import Login from "./auth/login";
 import Signup from "./auth/Signup";
-import { data } from "jquery";
-function App() {
+import { PrimeReactProvider } from 'primereact/api';
+
+function App({components}) {
+  const value = {
+    ripple: true,
+  }
   return (
+    <PrimeReactProvider value={value}>
     <Router>
       <Main />
     </Router>
+    </PrimeReactProvider>
   );
 }
 

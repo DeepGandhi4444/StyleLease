@@ -29,7 +29,12 @@
       "name": "Yash",
       "email": "yash@example.com",
       "password": "password202"
+    },
+    {
+      "id": "965d",
+      "name": "vikash",
+      "email": "vikash@gmail.com",
+      "password": "123566"
     }
-
   ]
 }

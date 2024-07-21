@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Toast } from "primereact/toast";
-
+import { Ripple } from "primereact/ripple";
 const Cart = ({ cartItems, setCartItems }) => {
   const removeFromCart = (product) => {
     setCartItems(cartItems.filter((item) => item.id !== product.id));
@@ -22,8 +22,8 @@ const Cart = ({ cartItems, setCartItems }) => {
     <>
       <div className="top-header">
         <div className="logo">
-          <Link to="/">
-            <img src="images/StyleLease.png" title="brandlogo" />
+          <Link to="/home">
+            <img src="images/StyleLease.png" title="brandlogo" alt="" />
           </Link>
         </div>
       </div>
@@ -37,7 +37,7 @@ const Cart = ({ cartItems, setCartItems }) => {
             <input
               type="button"
               defaultValue="Checkout"
-              onClick={show}
+              onClick={dualfunc}
             />
           </div>
         )}
@@ -51,11 +51,14 @@ const Cart = ({ cartItems, setCartItems }) => {
               <button
                 onClick={() => removeFromCart(item)}
                 style={styles.button}
+                className="p-ripple"
               >
                 Remove
+                <Ripple/>
               </button>
-              <Link to="/one">
+              <Link to="/one" className="p-ripple">
                 <button style={styles.button}>View</button>
+                <Ripple/>
               </Link>
             </div>
           </div>

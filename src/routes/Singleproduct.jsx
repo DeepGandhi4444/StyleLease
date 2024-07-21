@@ -1,5 +1,6 @@
 import React, { useState,useRef} from "react";
 import ProductGallery from "../components/ProductGallery";
+import { Ripple } from "primereact/ripple";
 import { Rating } from "primereact/rating";
 import { Panel } from "primereact/panel";
 import { Link } from "react-router-dom";
@@ -96,10 +97,13 @@ function dualfunc(){
                   </div>
                   <div className="clearfix"> </div>
                   <div className="product-cart-share">
-                    <div className="add-cart-btn">
-                    <Toast ref={toast} className="custom-toast-success " />
-                      <input type="button" defaultValue="Add to cart" onClick={() => dualfunc()} />
-                    </div>
+                  <div className="add-cart-btn">
+      <Toast ref={toast} className="custom-toast-success" />
+      <div className="p-ripple">
+        <input type="button" defaultValue="Add to cart" onClick={() => dualfunc()} />
+        <Ripple />
+      </div>
+    </div>
                     <ul className="product-share text-right">
                       <h3>Share This:</h3>
                       <ul>

@@ -1,6 +1,6 @@
 import React ,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
-
+import { Ripple } from "primereact/ripple";
 export default function Signup() {
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
@@ -86,8 +86,9 @@ export default function Signup() {
                   Remember Me
                 </label>
               </div>
-              <div className="input1">
+              <div className="input1 p-ripple">
                 <input type="submit" defaultValue="Sign In" name="" />
+                <Ripple/>
               </div>
               <div className="input1">
                 <p>
