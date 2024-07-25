@@ -1,27 +1,36 @@
-import React, { useState,useRef} from "react";
+import React, { useState, useRef } from "react";
 import ProductGallery from "../components/ProductGallery";
 import { Ripple } from "primereact/ripple";
 import { Rating } from "primereact/rating";
 import { Panel } from "primereact/panel";
 import { Link } from "react-router-dom";
 import { HitItems } from "../data/Products";
-import {Toast} from "primereact/toast"
+import { Toast } from "primereact/toast";
 const Singleproduct = ({ cartItems, setCartItems }) => {
   const [value, setValue] = useState(null);
   const ref = useRef(null);
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-  };
+  // const addToCart = (product) => {
+  //   setCartItems([...cartItems, product]);
+  // };
   const toast = useRef(null);
   const show = () => {
-    toast.current.show({ severity: 'success', summary: 'added to cart', detail: 'Item added to the cart succesfully' });
+    toast.current.show({
+      severity: "success",
+      summary: "added to cart",
+      detail: "Item added to the cart succesfully",
+      life:3000
+    });
     // toast.current.show({severity:'success', summary: 'Success', detail:'Message Content', life: 3000});
-
-};
-function dualfunc(){
-  addToCart(HitItems[0]);
-  show()
-}
+  };
+  // const dualfunc = () => {
+  //   setCartItems([...cartItems, HitItems[0]]);
+  //   show();
+  // };
+  const dualfunc = () => {
+    setCartItems([...cartItems, HitItems[0]]);
+    console.log(toast.current); // Check if toast ref is set correctly
+    toast.current.show({ severity: 'success', summary: 'added to cart', detail: 'Item added to the cart succesfully' });
+  };
   return (
     <>
       <div className="content">
@@ -48,7 +57,7 @@ function dualfunc(){
                     value={value}
                     onChange={(e) => setValue(e.value)}
                     cancel={true}
-                    style={{margin:"5px"}}
+                    style={{ margin: "5px" }}
                   />
                 </div>
 
@@ -57,7 +66,7 @@ function dualfunc(){
                     {/* <span>174.00</span> */}
                     <h5>109.00$</h5>
                   </div>
-               
+
                   <div className="clearfix"> </div>
                 </div>
                 <div className="product-price-details">
@@ -97,87 +106,60 @@ function dualfunc(){
                   </div>
                   <div className="clearfix"> </div>
                   <div className="product-cart-share">
-                  <div className="add-cart-btn">
-      <Toast ref={toast} className="custom-toast-success" />
-      <div className="p-ripple">
-        <input type="button" defaultValue="Add to cart" onClick={() => dualfunc()} />
-        <Ripple />
-      </div>
-    </div>
-                    <ul className="product-share text-right">
-                      <h3>Share This:</h3>
-                      <ul>
-                        <li>
-                          <Link className="share-face" to="#">
-                            <span> </span>{" "}
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="share-twitter" to="#">
-                            <span> </span>{" "}
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="share-google" to="#">
-                            <span> </span>{" "}
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="share-rss" to="#">
-                            <span> </span>{" "}
-                          </Link>
-                        </li>
-                        <div className="clear"> </div>
-                      </ul>
-                    </ul>
+                    <div className="add-cart-btn">
+                      <div className="p-ripple">
+                        <input
+                          type="button"
+                          defaultValue="Add to cart"
+                          onClick={show}
+                        />
+                        <Ripple />
+                      </div>
+                    </div>
+                    <Toast ref={toast} className="custom-toast-success" />{" "}
+                    {/* Move Toast component here */}
                   </div>
                 </div>
               </div>
               <div className="clearfix"> </div>
             </div>
 
-           
             <Panel ref={ref} header="Product Overview" toggleable>
-            <h4>DESCRIPTION:</h4>
-                  <p>
-                    With its beautiful premium leather, lace-up oxford styling,
-                    recycled rubber outsoles and 9-inch height, this
-                    Earthkeepers City Premium style is an undeniably handsome
-                    boot. To complement its rustic, commanding outer appearance,
-                    we've paid attention to the inside as well - by adding
-                    SmartWool® faux shearling to the linings and crafting the
-                    footbed using our exclusive anti-fatigue comfort foam
-                    technology to absorb shock. Imported.
-                  </p>
+              <h4>DESCRIPTION:</h4>
+              <p>
+                With its beautiful premium leather, lace-up oxford styling,
+                recycled rubber outsoles and 9-inch height, this Earthkeepers
+                City Premium style is an undeniably handsome boot. To complement
+                its rustic, commanding outer appearance, we've paid attention to
+                the inside as well - by adding SmartWool® faux shearling to the
+                linings and crafting the footbed using our exclusive
+                anti-fatigue comfort foam technology to absorb shock. Imported.
+              </p>
             </Panel>
             <Panel ref={ref} header="Feature" toggleable>
-            <h4>DESCRIPTION:</h4>
-                  <p>
-                    With its beautiful premium leather, lace-up oxford styling,
-                    recycled rubber outsoles and 9-inch height, this
-                    Earthkeepers City Premium style is an undeniably handsome
-                    boot. To complement its rustic, commanding outer appearance,
-                    we've paid attention to the inside as well - by adding
-                    SmartWool® faux shearling to the linings and crafting the
-                    footbed using our exclusive anti-fatigue comfort foam
-                    technology to absorb shock. Imported.
-                  </p>
+              <h4>DESCRIPTION:</h4>
+              <p>
+                With its beautiful premium leather, lace-up oxford styling,
+                recycled rubber outsoles and 9-inch height, this Earthkeepers
+                City Premium style is an undeniably handsome boot. To complement
+                its rustic, commanding outer appearance, we've paid attention to
+                the inside as well - by adding SmartWool® faux shearling to the
+                linings and crafting the footbed using our exclusive
+                anti-fatigue comfort foam technology to absorb shock. Imported.
+              </p>
             </Panel>
-            <Panel ref={ref} header="Customer Reviews" toggleable >
-            <h4>DESCRIPTION:</h4>
-                  <p>
-                    With its beautiful premium leather, lace-up oxford styling,
-                    recycled rubber outsoles and 9-inch height, this
-                    Earthkeepers City Premium style is an undeniably handsome
-                    boot. To complement its rustic, commanding outer appearance,
-                    we've paid attention to the inside as well - by adding
-                    SmartWool® faux shearling to the linings and crafting the
-                    footbed using our exclusive anti-fatigue comfort foam
-                    technology to absorb shock. Imported.
-                  </p>
+            <Panel ref={ref} header="Customer Reviews" toggleable>
+              <h4>DESCRIPTION:</h4>
+              <p>
+                With its beautiful premium leather, lace-up oxford styling,
+                recycled rubber outsoles and 9-inch height, this Earthkeepers
+                City Premium style is an undeniably handsome boot. To complement
+                its rustic, commanding outer appearance, we've paid attention to
+                the inside as well - by adding SmartWool® faux shearling to the
+                linings and crafting the footbed using our exclusive
+                anti-fatigue comfort foam technology to absorb shock. Imported.
+              </p>
             </Panel>
-          
-         
 
             <div className="clearfix"> </div>
           </div>

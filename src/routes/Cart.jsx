@@ -6,20 +6,20 @@ const Cart = ({ cartItems, setCartItems }) => {
   const removeFromCart = (product) => {
     setCartItems(cartItems.filter((item) => item.id !== product.id));
   };
-  const emptyCart = () => {
-    setCartItems([]);
-  };
+
   const toast =useRef(null);
   const show = () => {
     toast.current.show({ severity: 'success', summary: 'Checkout', detail: 'Proceeding to checkout', life: 3000 });
-    setCartItems([]);
+    // setCartItems([]);
   };
- const dualfunc = () => {
+  const dualfunc = () => {
+    setCartItems([]);
     show();
-    emptyCart();
   };
   return (
     <>
+                <Toast ref={toast} className="custom-toast-success" />
+
       <div className="top-header">
         <div className="logo">
           <Link to="/home">
@@ -32,13 +32,11 @@ const Cart = ({ cartItems, setCartItems }) => {
         {cartItems.length === 0 ? (
           <p>Cart is empty</p>
         ) : (
-          <div className="add-cart-btn " style={{marginBottom:"10px"}}>
-            <Toast ref={toast} className="custom-toast-success" />
-            <input
-              type="button"
-              defaultValue="Checkout"
-              onClick={dualfunc}
-            />
+          <div className="add-cart-btn p-ripple" style={{marginBottom:"10px"}}>
+        <button onClick={dualfunc} style={styles.button}>
+          <Ripple/>
+          Checkout
+        </button>
           </div>
         )}
 
@@ -56,8 +54,8 @@ const Cart = ({ cartItems, setCartItems }) => {
                 Remove
                 <Ripple/>
               </button>
-              <Link to="/one" className="p-ripple">
-                <button style={styles.button}>View</button>
+              <Link to="/one" >
+                <button style={styles.button} className="p-ripple">View</button>
                 <Ripple/>
               </Link>
             </div>
