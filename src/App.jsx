@@ -1,5 +1,5 @@
 import "./App.css";
-import React,{useEffect, useState} from 'react'
+import React,{useState} from 'react'
 import {
   BrowserRouter as Router,
   Routes,
@@ -35,13 +35,10 @@ function Main() {
   const noNavbarPaths = ["/cart", "/profile","/","/signup"];
   const noFooterPaths = ["/","/signup"];
   const [cartItems, setCartItems] = useState([]);
-
-
   return (
     <>
       {!noNavbarPaths.includes(location.pathname) && <Navbar />}
-      <Routes>
-        
+      <Routes>    
         <Route index element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />

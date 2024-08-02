@@ -25,12 +25,13 @@ const Home = () => {
                   className="r-img text-center"
                   src="images/img-w.jpg"
                   title="name"
+                  alt=""
                 />
                 <span>
-                  <img src="images/obj1.png" title="name" />
+                  <img src="images/obj1.png" title="name" alt="" />
                 </span>
                 <Link className="r-list-w" to="/one">
-                  <img src="images/list-icon.png" title="list" />
+                  <img src="images/list-icon.png" title="list" alt="" />
                 </Link>
               </div>
             </div>
@@ -41,12 +42,13 @@ const Home = () => {
                   className="r-img text-center"
                   src="images/man-r-img.jpg"
                   title="name"
+                  alt=""
                 />
                 <span>
-                  <img src="images/obj2.png" title="name" />
+                  <img src="images/obj2.png" title="name" alt=""/>
                 </span>
                 <Link className="r-list-w" to="/one">
-                  <img src="images/list-icon.png" title="list" />
+                  <img src="images/list-icon.png" title="list" alt=""/>
                 </Link>
               </div>
             </div>
@@ -57,12 +59,13 @@ const Home = () => {
                   className="r-img text-center"
                   src="images/kid-r-img.jpg"
                   title="name"
+                  alt=""
                 />
                 <span>
-                  <img src="images/obj3.png" title="name" />
+                  <img src="images/obj3.png" title="name" alt="" />
                 </span>
                 <Link className="r-list-w" to="/one">
-                  <img src="images/list-icon.png" title="list" />
+                  <img src="images/list-icon.png" title="list" alt=""/>
                 </Link>
               </div>
             </div>

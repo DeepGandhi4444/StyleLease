@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Profile=()=>{
+  const name = sessionStorage.getItem('name');
+  const email = sessionStorage.getItem('email');
     return(
         <>
   {/*--container--*/}
@@ -9,7 +11,7 @@ const Profile=()=>{
     <div className="top-header">
       <div className="logo">
         <a href="index.html">
-          <img src="images/StyleLease.png" title="barndlogo" />
+          <img src="images/StyleLease.png" alt='' title="barndlogo" />
         </a>
       </div>
     </div>
@@ -24,8 +26,8 @@ const Profile=()=>{
           />
         </div>
         <div className="col-sm-6 text-center">
-          <h2>Deep Gandhi</h2>
-          <p>8866442233</p>
+          <h2>{name}</h2>
+          <p>{email}</p>
         </div>
       </div>
     </div>
@@ -136,16 +138,16 @@ const Profile=()=>{
             style={{ listStyle: "none", paddingTop: 10 }}
           >
             <a href="products.html" style={{ paddingLeft: 0 }}>
-              <img src="images/categories.png" />
+              <img src="images/categories.png" alt='' />
             </a>
             <a href="index.html" style={{ paddingLeft: 22 }}>
-              <img src="images/home1.png" />
+              <img src="images/home1.png" alt='' />
             </a>
             <a href="cart.html" style={{ paddingLeft: 18 }}>
-              <img src="images/cart1.png" />
+              <img src="images/cart1.png" alt='' />
             </a>
-            <a href="#" style={{ paddingLeft: 20 }}>
-              <img src="images/account.png" />
+            <a href="/profile" style={{ paddingLeft: 20 }}>
+              <img src="images/account.png"  alt='' />
             </a>
           </li>
         </ul>

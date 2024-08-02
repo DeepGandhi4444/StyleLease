@@ -7,10 +7,10 @@ const Hit = ({ items }) => {
       {items.map((item, index) => (
         <div className="col-md-3 special-products-grid text-center" key={index}>
           <Link className="brand-name" to="/one">
-            <img src={item.brandSrc} title="name" />
+            <img src={item.brandSrc} title="name" alt="" />
           </Link>
           <Link className="product-here" to="/one">
-            <img src={item.imgSrc} title="product-name" />
+            <img src={item.imgSrc} title="product-name" alt="" />
           </Link>
           <h4>
             <Link to="/one">{item.name}</Link>

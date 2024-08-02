@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className="top-header">
           <div className="logo">
             <Link to="/">
-              <img src="images/StyleLease.png" title="brandlogo" />
+              <img src="images/StyleLease.png" title="brandlogo" alt="" />
             </Link>
           </div>
           <div className="clearfix"> </div>
@@ -39,7 +39,7 @@ export default function Navbar() {
               <div className="clearfix"> </div>
             </ul>
             <Link to="/products" id="pull">
-              <img src="images/menu.png" title="menu" />
+              <img src="images/menu.png" title="menu" alt=""/>
             </Link>
           </nav>
 

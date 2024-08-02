@@ -9,27 +9,25 @@ import { Toast } from "primereact/toast";
 const Singleproduct = ({ cartItems, setCartItems }) => {
   const [value, setValue] = useState(null);
   const ref = useRef(null);
-  // const addToCart = (product) => {
-  //   setCartItems([...cartItems, product]);
-  // };
+
   const toast = useRef(null);
   const show = () => {
     toast.current.show({
       severity: "success",
       summary: "added to cart",
       detail: "Item added to the cart succesfully",
-      life:3000
+      life: 3000,
     });
-    // toast.current.show({severity:'success', summary: 'Success', detail:'Message Content', life: 3000});
   };
-  // const dualfunc = () => {
-  //   setCartItems([...cartItems, HitItems[0]]);
-  //   show();
-  // };
+
   const dualfunc = () => {
     setCartItems([...cartItems, HitItems[0]]);
     console.log(toast.current); // Check if toast ref is set correctly
-    toast.current.show({ severity: 'success', summary: 'added to cart', detail: 'Item added to the cart succesfully' });
+    toast.current.show({
+      severity: "success",
+      summary: "added to cart",
+      detail: "Item added to the cart succesfully",
+    });
   };
   return (
     <>
@@ -107,12 +105,8 @@ const Singleproduct = ({ cartItems, setCartItems }) => {
                   <div className="clearfix"> </div>
                   <div className="product-cart-share">
                     <div className="add-cart-btn">
-                      <div className="p-ripple">
-                        <input
-                          type="button"
-                          defaultValue="Add to cart"
-                          onClick={show}
-                        />
+                      <div className="p-ripple" onClick={dualfunc}>
+                        <input type="button" defaultValue="Add to cart" onClick={show} />
                         <Ripple />
                       </div>
                     </div>
