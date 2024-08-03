@@ -213,3 +213,8 @@ section .content .form1 .socmed li img{
 }
 
 }
+.eye{
+    position: relative;
+    top: -34px;
+    right: -120px;
+}

@@ -1,7 +1,8 @@
-import React, { useState, useEffect , lazy ,Suspense} from "react";
+import React, { useState, useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Ripple } from "primereact/ripple";
 import { Oval } from "react-loader-spinner";
+import { Eye, EyeOff } from "lucide-react";
 const loginImage = require(`../data/login.jpg`);
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,7 @@ export default function Login() {
   const [error, setError] = useState(null);
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,12 +19,12 @@ export default function Login() {
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
-        // alert("data loaded!!")
+        alert("data loaded!!")
         setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching users:", error);
-        // alert("error fetching data pls try again !!")/]
+        alert("error fetching data pls try again !!")
       });
   }, []);
   console.log(users);
@@ -38,6 +40,9 @@ export default function Login() {
       setError("Invalid email or password.");
     }
   };
+  const handleShowPass = () => {
+    setShowPass(!showPass);
+  };  
   return (
     <>
       <section>
@@ -45,15 +50,17 @@ export default function Login() {
           <img src={loginImage} alt="Login" loading="lazy" />
         </div>
         <div className="content">
-          <div className="spinner"
-          style={{backgroundColor:"#00000080",
-            position:"absolute",
-            height:"100vh",
-            width:"100%",
-            zIndex:"5",
-            display: isLoading ? "grid" : "none",
-            placeItems:"center"
-          }}
+          <div
+            className="spinner"
+            style={{
+              backgroundColor: "#00000080",
+              position: "absolute",
+              height: "100vh",
+              width: "100%",
+              zIndex: "5",
+              display: isLoading ? "grid" : "none",
+              placeItems: "center",
+            }}
           >
             <Oval
               visible={isLoading}
@@ -64,7 +71,6 @@ export default function Login() {
               wrapperStyle={{}}
               secondaryColor="#2D51A7"
               wrapperClass=""
-              
             />
           </div>
           <div className="form1">
@@ -83,11 +89,14 @@ export default function Login() {
               <div className="input1">
                 <span>Password</span>
                 <input
-                  type="password"
+                  type={showPass?"text":"password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
+                <div className="eye" onClick={handleShowPass}>
+                  {showPass ? <Eye /> : <EyeOff />}
+                </div>
               </div>
               <div className="remember">
                 <label>
@@ -96,9 +105,9 @@ export default function Login() {
                 </label>
               </div>
               <div className="input1 p-ripple">
-               <button type="submit" onClick={handleSubmit}>
-                Login
-               </button>
+                <button type="submit" onClick={handleSubmit}>
+                  Login
+                </button>
                 <Ripple />
               </div>
               <div className="input1">
@@ -113,4 +122,3 @@ export default function Login() {
     </>
   );
 }
-

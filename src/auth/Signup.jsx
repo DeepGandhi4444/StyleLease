@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Ripple } from "primereact/ripple";
 import { Toast } from "primereact/toast";
 import { Oval } from "react-loader-spinner";
+import { Eye,EyeOff } from "lucide-react";
 const loginImage = require(`../data/login.jpg`);
 export default function Signup() {
   const [users, setUsers] = useState([]);
@@ -10,6 +11,7 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [showPass,setShowPass] = useState(false);
   const toast = useRef(null);
   useEffect(() => {
     // Fetch users data on component mount
@@ -60,6 +62,10 @@ export default function Signup() {
     }
   };
 
+
+  const handleShowPass = () => {
+    setShowPass(!showPass);
+  };  
   return (
     <>
       {" "}
@@ -114,14 +120,17 @@ export default function Signup() {
                 />
               </div>
 
-              <div className="input1">
+              <div className="input1 ">
                 <span>Password</span>
                 <input
-                  type="password"
+                  type= {showPass?"text":"password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
+                <div className="eye" onClick={handleShowPass}>
+                  {showPass ? <Eye/> : <EyeOff/>}
+                </div>
               </div>
               <div className="remember">
                 <label>
