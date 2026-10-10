@@ -1,4 +1,4 @@
-exports.HomeSlider=[
+export const HomeSlider = [
     {
       id: 1,
       src: "images/shoess.png",
@@ -23,7 +23,7 @@ exports.HomeSlider=[
   ];
 
 
-  exports.ProductSlider= [
+export const ProductSlider = [
     {
       itemImageSrc: "images/product-slide/image1_thumb.jpg ",
       thumbnailImageSrc: "images/product-slide/image1_large.jpg ",
@@ -65,3 +65,7 @@ exports.HomeSlider=[
     title: 'Title 1'
     },
   ];
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { HomeSlider, ProductSlider };
+}

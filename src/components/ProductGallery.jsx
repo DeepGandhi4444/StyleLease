@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Galleria } from "primereact/galleria";
 import { ProductSlider } from "../data/Slider";
 
-export default function ProductGallery() {
+export default function ProductGallery({ product, galleryImages }) {
   const [images, setImages] = useState(null);
   const responsiveOptions = [
     {
@@ -16,8 +16,30 @@ export default function ProductGallery() {
   ];
 
   useEffect(() => {
-    setImages(ProductSlider);
-  }, []);
+    if (galleryImages && galleryImages.length > 0) {
+      setImages(
+        galleryImages.map((src, idx) => ({
+          itemImageSrc: src,
+          thumbnailImageSrc: src,
+          alt: `${product?.name || "Product"} view ${idx + 1}`,
+        }))
+      );
+    } else if (product && (product.galleryImages?.length > 0 || product.imgSrc)) {
+      const srcList =
+        product.galleryImages && product.galleryImages.length > 0
+          ? product.galleryImages
+          : [product.imgSrc];
+      setImages(
+        srcList.map((src, idx) => ({
+          itemImageSrc: src,
+          thumbnailImageSrc: src,
+          alt: `${product.name} view ${idx + 1}`,
+        }))
+      );
+    } else {
+      setImages(ProductSlider);
+    }
+  }, [product, galleryImages]);
 
   const itemTemplate = (item) => {
     return (
